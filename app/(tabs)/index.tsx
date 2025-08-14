@@ -1,75 +1,75 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import Colors from "@/constants/Colors";
+import imagePath from "@/constants/imagePath";
+import { height, scale } from "@/constants/Scaling";
+import { SafeAreaView, StyleSheet, View } from "react-native";
+import HeadComponent from "../components/Header";
+import IconLabelButton from "../components/LabelButton";
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
-
-export default function HomeScreen() {
+export default function Home() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
+    <SafeAreaView style={styles.container}>
+      <View style={styles.headConatin}>
+      <HeadComponent
+        label="Product"
+        color={Colors.WHITE}
+        containerStyle={{ backgroundColor: Colors.PRIMARY, }}
+        textStyle={{ fontSize:scale(30), fontWeight: "bold" }}
+        imageStyle={{ tintColor: Colors.WHITE,backgroundColor:Colors.ACCENTRED }}
+      />
+       <HeadComponent
+       color={Colors.WHITE}
+        image={imagePath.seacrh}
+         containerStyle={{left:130 }}
+        imageStyle={{ tintColor: Colors.WHITE }}
+
+      />
+      <HeadComponent
+        color={Colors.WHITE}
+        image={imagePath.bucket}
+        containerStyle={{ left:100 }}
+        imageStyle={{ tintColor: Colors.WHITE, }}
+      />
+     
+      </View>
+
+      <View style={styles.itemConatiner}>
+        <IconLabelButton
+         label="Chicken"
+         imageSource={imagePath.bucket}
+         onPress={()=>console.log("chickenPress")}
+        
         />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+         <IconLabelButton
+         label="Chicken"
+         imageSource={imagePath.bucket}
+         onPress={()=>console.log("chickenPress")}
+        
+        />
+         <IconLabelButton
+         label="Chicken"
+         imageSource={imagePath.bucket}
+         onPress={()=>console.log("chickenPress")}
+        
+        />
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
+  container: {
+flex:1,
+
+ 
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+  headConatin:{
+height:height/8,
+    flexDirection:"row",
+    backgroundColor:Colors.PRIMARY
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
-  },
+  itemConatiner:{
+    flexDirection:"row",
+    justifyContent:"space-around"
+  }
+
 });

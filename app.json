@@ -33,6 +33,42 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
+      ],
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/Nunito-Black.ttf",
+            "./assets/fonts/Nunito-BlackItalic.ttf",
+            "./assets/fonts/Nunito-MediumItalic.ttf",
+            "./assets/fonts/Nunito-SemiBoldItalic.ttf"
+          ],
+          "android": {
+            "fonts": [
+              {
+                "fontFamily": "Nunito",
+                "fontDefinitions": [
+                  {
+                    "path": "./assets/fonts/Nunito-Black.ttf",
+                    "weight": 400
+                  },
+                  {
+                    "path": "./assets/fonts/Nunito-BlackItalic.ttf",
+                    "weight": 700
+                  },
+                  {
+                    "path": "./assets/fonts/Nunito-MediumItalic.ttf",
+                    "weight": 500
+                  },
+                  {
+                    "path": "./assets/fonts/Nunito-SemiBoldItalic.ttf",
+                    "weight": 700
+                  }
+                ]
+              }
+            ]
+          }
+        }
       ]
     ],
     "experiments": {
